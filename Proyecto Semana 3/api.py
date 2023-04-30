@@ -10,7 +10,7 @@ api = Api(
     app, 
     version='1.0', 
     title='Predictor of Vehicle Prices API',
-    description='El "Predictor of Vehicle Pricesr API" es un modelo disponible para predecir precios de vehiculos.')
+    description='El "Predictor of Vehicle Prices API" es un modelo disponible para predecir precios de vehiculos.')
 
 ns = api.namespace('Forecaster', 
      description='Vehicle Price Forecaster API')
@@ -66,7 +66,7 @@ class PredictApi(Resource):
         args = parser.parse_args()
         
         return {
-         "result": predict_price(args['Year', 'Mileage', 'State', 'Make', 'Model'])
+         "result": predict_price(args['Year'], args['Mileage'], args['State'], args['Make'], args['Model'])
         }, 200
     
     
